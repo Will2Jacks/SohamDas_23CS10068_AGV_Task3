@@ -17,3 +17,19 @@ The image is read using OpenCV (cv.imread()) and converted to RGB format (cv.cvt
 Filter Responses are extracted from the image using the extract_filter_responses() function.
 Points are then selected from the filter responses based on the specified method (get_random_points() or get_harris_points()).
 The selected points are then stored into pixelResponses.
+
+
+The get_harris_points function takes a grayscale image and then performs HarrisEdgeDetection on it.
+It also normalizes the pixel values. If the pixel values in the image exceed 1, they are normalized to the range 0-1 by dividing by 255.
+
+
+The get_image_features function takes a word map and the size of the visual dictionary 
+A visual image dictionary of each image is then computed using the words and a histogram is then computed
+The histogram then stores the word count of each image 
+
+The get_random_points takes the height and width of each image. The random function then generates any two random values and thus a random point is generated.
+Using these random points the image is attempted to be reconstructed.
+
+The getVisualWords function, for each pixel in the image, computes the Euclidean distance between the pixel's feature vector and each visual word in the dictionary.
+It then finds the visual word in the dictionary that has the minimum distance to the pixel's feature vector.
+It also assigns the index of the closest visual word to the corresponding pixel in the word map.
