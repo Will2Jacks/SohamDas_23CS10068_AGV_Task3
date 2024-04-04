@@ -8,3 +8,12 @@ If the input image is grayscale , it is converted to a 3-channel image by extrac
 
 The function iterates over each channel of the input image (R, G, B) separately.
 The filter responses for each channel are stored separately in lists (filterresponsesRed, filterresponsesGreen, filterresponsesBlue).
+
+
+The get_dictionary function creates a visual dictionary from a set of images.
+
+For each image in imgPaths:
+The image is read using OpenCV (cv.imread()) and converted to RGB format (cv.cvtColor()).
+Filter Responses are extracted from the image using the extract_filter_responses() function.
+Points are then selected from the filter responses based on the specified method (get_random_points() or get_harris_points()).
+The selected points are then stored into pixelResponses.
