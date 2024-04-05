@@ -12,17 +12,17 @@ def get_visual_words(I, dictionary, filterBank):
 
     wordMap = np.zeros((h,w))
 
-    val=list(dict.keys)[0]
-    mini=100000
-    min_val=val
+    val = list(dictionary.keys())[0]
+    mini = 100000
+    min_val = val
     for i in range(h):
         for j in range(w):
             for value in dictionary:
-                d=cdist(I, dictionary[value], 'euclidean')
-                if(d<mini):
-                    mini=d
-                    min_val=value 
-            wordMap[i,j]=min_val
+                d = cdist(I[i, j], dictionary[value], 'euclidean')  # Compute distance for each pixel
+                if d < mini:
+                    mini = d
+                    min_val = value  
+            wordMap[i, j] = min_val
     
 
 
