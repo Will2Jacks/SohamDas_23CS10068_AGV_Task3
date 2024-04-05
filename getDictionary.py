@@ -27,7 +27,7 @@ def get_dictionary(imgPaths, alpha, K, method):
         else:
             lister=get_harris_points(filterResponses, alpha, K)
 
-        pixelResponses.extend(lister)
+        pixelResponses = np.vstack((pixelResponses, lister))
 
 
     dictionary = KMeans(n_clusters=K, random_state=0).fit(pixelResponses).cluster_centers_
