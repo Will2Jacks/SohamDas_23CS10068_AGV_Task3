@@ -9,4 +9,4 @@ def get_image_features(wordMap, dictionarySize):
     return h
     # ----------------------------------------------
     
-    return h
+    
